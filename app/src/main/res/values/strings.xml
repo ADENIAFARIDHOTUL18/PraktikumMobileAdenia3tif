@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">tif-adenia</string>
+    <string name="verif">verification</string>
+    <string name="berhasil">Kode Berhasil Dikirim!"</string>
+    <string name="periksa">Silahkan Periksa Nomor Anda"</string>
+
+</resources>
