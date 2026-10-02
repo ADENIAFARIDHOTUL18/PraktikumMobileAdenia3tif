@@ -8,8 +8,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.tif_adenia.databinding.ActivityMainBinding
 import com.example.tif_adenia.pertemuan4.FourthActivity
+import com.example.tif_adenia.pertemuan5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,11 +28,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnToFourth.setOnClickListener {
-            val intent = Intent(this, FourthActivity::class.java)
-            intent.putExtra("name", "Politeknik Caltex Riau")
-            intent.putExtra("from", "Rumbai")
-            intent.putExtra("age", 25)
-            startActivity(intent)
+            val i = Intent(this, FourthActivity::class.java)
+            /*tambahkan bagian berikut*/
+            i.putExtra("name", "Politeknik Caltex Riau")
+            i.putExtra("from", "Rumbai")
+            i.putExtra("age", 25)
+            startActivity(i)
+        }
+
+        binding.btnToFifth.setOnClickListener {
+            val i = Intent(this, FifthActivity::class.java)
+            startActivity(i)
         }
     }
 }
