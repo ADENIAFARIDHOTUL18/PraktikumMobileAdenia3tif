@@ -3,6 +3,7 @@ package com.example.tif_adenia
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Akses penyimpanan "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
         binding.btnToFourth.setOnClickListener {
             val i = Intent(this, FourthActivity::class.java)
             /*tambahkan bagian berikut*/
@@ -39,6 +43,25 @@ class MainActivity : AppCompatActivity() {
         binding.btnToFifth.setOnClickListener {
             val i = Intent(this, FifthActivity::class.java)
             startActivity(i)
+        }
+
+        // Logout: konfirmasi dulu, hapus data login, lalu kembali ke AuthActivity
+        binding.btnLogout.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Apakah kamu yakin ingin logout?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+
+                    startActivity(Intent(this, AuthActivity::class.java))
+                    finish()
+                }
+                .setNegativeButton("Tidak", null)
+                .show()
         }
     }
 }
