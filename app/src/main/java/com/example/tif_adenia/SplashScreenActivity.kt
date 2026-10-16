@@ -12,16 +12,15 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        // Akses penyimpanan "user_pref"
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         lifecycleScope.launch {
-            delay(2000)
+            delay(2000) // simulasi pengambilan data selama 2 detik
 
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             val intent = if (isLogin) {
-                Intent(this@SplashScreenActivity, MainActivity::class.java)
+                Intent(this@SplashScreenActivity, BaseActivity::class.java)
             } else {
                 Intent(this@SplashScreenActivity, AuthActivity::class.java)
             }

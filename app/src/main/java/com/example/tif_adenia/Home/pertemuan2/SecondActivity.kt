@@ -1,4 +1,4 @@
-package com.example.tif_adenia.pertemuan2
+package com.example.tif_adenia.Home.pertemuan2
 
 import android.os.Bundle
 import android.util.Log
