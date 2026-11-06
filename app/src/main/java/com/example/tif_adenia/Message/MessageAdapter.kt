@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.example.tif_adenia.databinding.ItemMessageBinding
 
 class MessageAdapter(
@@ -25,6 +26,15 @@ class MessageAdapter(
 
         binding.textSender.text = data.senderName
         binding.textMessage.text = data.messageText
+        binding.textTime.text = data.time
+
+        view.setOnClickListener {
+            Snackbar.make(
+                parent,
+                "Pesan dari ${data.senderName}: ${data.messageText} : ${data.time}",
+                Snackbar.LENGTH_SHORT
+            ).show()
+        }
 
         return view
     }

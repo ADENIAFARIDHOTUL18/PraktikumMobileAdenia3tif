@@ -12,18 +12,17 @@ class MessageFragment : Fragment() {
 
     private var _binding: ActivityMessageFragmentBinding? = null
     private val binding get() = _binding!!
-
     private val messageList = listOf(
-        MessageModel("Alya", "Halo! Apa kabar?", "https://avatar.iran.liara.run/public/1"),
-        MessageModel("Budi", "Sudah makan?", "https://avatar.iran.liara.run/public/2"),
-        MessageModel("Citra", "Jangan lupa tugasnya ya!", "https://avatar.iran.liara.run/public/3"),
-        MessageModel("Dika", "Besok kita rapat jam 9", "https://avatar.iran.liara.run/public/4"),
-        MessageModel("Eka", "Nice job kemarin!", "https://avatar.iran.liara.run/public/5"),
-        MessageModel("Fajar", "Lagi ngapain?", "https://avatar.iran.liara.run/public/6"),
-        MessageModel("Gita", "Boleh minta tolong?", "https://avatar.iran.liara.run/public/7"),
-        MessageModel("Hana", "Lihat email ya", "https://avatar.iran.liara.run/public/8"),
-        MessageModel("Irfan", "Oke noted", "https://avatar.iran.liara.run/public/9"),
-        MessageModel("Joko", "Sampai jumpa besok", "https://avatar.iran.liara.run/public/10")
+        MessageModel("Alya", "Halo! Apa kabar?", "https://avatarapi.runflare.run/public/1", "08:00"),
+        MessageModel("Budi", "Sudah makan?", "https://avatarapi.runflare.run/public/2", "08:05"),
+        MessageModel("Citra", "Jangan lupa tugasnya ya!", "https://avatarapi.runflare.run/public/3", "08:10"),
+        MessageModel("Dika", "Besok kita rapat jam 9", "https://avatarapi.runflare.run/public/4", "08:15"),
+        MessageModel("Eka", "Nice job kemarin!", "https://avatarapi.runflare.run/public/5", "08:20"),
+        MessageModel("Fajar", "Lagi ngapain?", "https://avatarapi.runflare.run/public/6", "08:25"),
+        MessageModel("Gita", "Boleh minta tolong?", "https://avatarapi.runflare.run/public/7", "08:30"),
+        MessageModel("Hana", "Lihat email ya", "https://avatarapi.runflare.run/public/8", "08:35"),
+        MessageModel("Irfan", "Oke noted", "https://avatarapi.runflare.run/public/9", "08:40"),
+        MessageModel("Joko", "Sampai jumpa besok", "https://avatarapi.runflare.run/public/10", "08:45")
     )
 
     override fun onCreateView(
@@ -41,6 +40,9 @@ class MessageFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Message"
         }
+
+        val adapter = MessageAdapter(requireContext(), messageList)
+        binding.listMessageItems.adapter = adapter
     }
 
     override fun onDestroyView() {

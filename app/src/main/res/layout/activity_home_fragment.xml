@@ -7,11 +7,20 @@
     android:background="#5AB35776"
     tools:context=".Home.HomeFragment">
 
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#D36941B1"
+        android:background="#00B0279E"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,88 +39,89 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <Button
-        android:id="@+id/btnToSecond"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
-        android:text="Pertemuan 2"
+        android:layout_marginTop="8dp"
+        android:text="Silahkan Pilih"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
-    <Button
-        android:id="@+id/btnToThird"
-        android:layout_width="0dp"
+    <!-- GridLayout untuk menyusun 6 tombol Pertemuan -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayoutPertemuan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:text="Pertemuan 3"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        app:columnCount="2"
+        app:useDefaultMargins="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToSecond" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-    <Button
-        android:id="@+id/btnToFourth"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:text="Pertemuan 4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToThird" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToSecond"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
 
-    <Button
-        android:id="@+id/btnToFifth"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:text="Pertemuan 5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToFourth" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToThird"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
 
-    <Button
-        android:id="@+id/btnToSeventh"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:text="Pertemuan 7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToFifth" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToFourth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 4"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToFifth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 5"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToSeventh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 7"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToTenth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pertemuan 10"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal" />
+
+    </androidx.gridlayout.widget.GridLayout>
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnToSeventh" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Silahkan Pilih"
-        app:layout_constraintBottom_toTopOf="@+id/btnToSecond"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
-        app:layout_constraintVertical_bias="0.241" />
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutPertemuan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

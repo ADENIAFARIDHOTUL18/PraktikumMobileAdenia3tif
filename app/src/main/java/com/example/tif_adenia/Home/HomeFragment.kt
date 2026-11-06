@@ -16,6 +16,7 @@ import com.example.tif_adenia.Home.pertemuan4.FourthActivity
 import com.example.tif_adenia.Home.pertemuan5.FifthActivity
 import com.example.tif_adenia.Home.pertemuan7.SeventhActivity
 import com.example.tif_adenia.databinding.ActivityHomeFragmentBinding
+import com.example.tif_adenia.Home.pertemuan_10.TenthActivity
 
 class HomeFragment : Fragment() {
 
@@ -63,6 +64,10 @@ class HomeFragment : Fragment() {
 
         binding.btnToSeventh.setOnClickListener {
             startActivity(Intent(requireContext(), SeventhActivity::class.java))
+        }
+
+        binding.btnToTenth.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {
