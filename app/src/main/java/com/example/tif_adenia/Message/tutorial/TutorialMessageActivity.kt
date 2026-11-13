@@ -17,5 +17,9 @@ class TutorialMessageActivity : AppCompatActivity() {
         val fragmentsList = listOf(Tutorial1Fragment(), Tutorial2Fragment(), Tutorial3Fragment())
         val adapter = TutorialFragmentAdapter(this, fragmentsList)
         binding.tutorialMessageViewPager.adapter = adapter
+
+        // 3. Hubungkan DotsIndicator dengan TutorialMessageViewPager
+        binding.dotIndicator.attachTo(binding.tutorialMessageViewPager)
+
     }
 }

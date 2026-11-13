@@ -47,4 +47,5 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:5.0.9")
     implementation("androidx.gridlayout:gridlayout:1.1.0")
     implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
 }
