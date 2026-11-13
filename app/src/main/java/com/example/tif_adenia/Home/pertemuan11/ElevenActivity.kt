@@ -28,24 +28,23 @@ class ElevenActivity : AppCompatActivity() {
 
         // 3. Hubungkan TabLayout & ViewPager2 menggunakan Adapter
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            // Atur judul untuk setiap tab
             when (position) {
                 0 -> {
                     tab.text = "Tab A"
-                    //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(this, R.drawable.ic_home)
-                    //Tambah Badge Tanpa nomor (hanya titik)
                     val badge = tab.getOrCreateBadge()
                     badge.isVisible = true
                 }
                 1 -> {
                     tab.text = "Tab B"
-                    //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(this, R.drawable.ic_home)
-                    //Tambah Badge dengan nomor
                     val badge = tab.getOrCreateBadge()
                     badge.isVisible = true
                     badge.number = 5
+                }
+                2 -> {
+                    tab.text = "Produk"
+                    tab.icon = ContextCompat.getDrawable(this, R.drawable.ic_home)
                 }
             }
         }.attach()

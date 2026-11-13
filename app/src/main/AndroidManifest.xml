@@ -67,6 +67,10 @@
             android:name=".Home.pertemuan11.ElevenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Message.tutorial.TutorialMessageActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
